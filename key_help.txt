@@ -1,0 +1,18 @@
+;m - Make
+;r - Make and run
+;p - Switch between .cpp and .h
+;s - :s/ - faster way to start search
+;s <visual selection> - replace current visual selection with text
+;ls <visual selection> - replace visual on current line with new text
+;w - faster save
+CTRL-p - find files through FZF
+
+,wa - add workspace folder
+,wr - remove workspace folder
+,wl - print all workspace folders
+
+,rn - rename
+gr - show all references
+
+gcc - comment out the line
+gc - comment out selection in visual mode
