@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# TODO: Add style config for wofi
+if [[ $(pidof wofi) ]]; then
+	pkill wofi
+fi
+WOFI="wofi --dmenu --allow-images --hide-search"
+cliphist list | $WOFI | cliphist decode | wl-copy
