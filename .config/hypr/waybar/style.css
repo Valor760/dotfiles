@@ -21,7 +21,12 @@ window#waybar.hidden {
 #cpu,
 #disk,
 #memory,
-#wireplumber {
+#wireplumber,
+#language,
+#custom-spotify,
+#network,
+#temperature
+{
 	font-weight: bold;
 }
 
@@ -82,3 +87,17 @@ window#waybar.hidden {
 	color: #138eec;
 }
 
+#language {
+	padding: 0 0 0 0;
+	margin-right: 2px;
+}
+
+.custom-spotify {
+    padding: 0 10px;
+    margin: 0 0 0 0;
+}
+
+#network {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}

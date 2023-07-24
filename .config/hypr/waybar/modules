@@ -1,68 +1,107 @@
 {
-  "wlr/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "all-outputs": false,
-    "sort-by-number": true,
-    "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "focused": "",
-      "default": ""
-    },
-  },
-	
-  "clock": {
-    "interval": 60,
-    "align": 0,
-    "rotate": 0,
-    "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d %b %Y [%H:%M]}",
-  },
+	"wlr/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"all-outputs": false,
+		"sort-by-number": true,
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8",
+			"9": "9",
+			"10": "10",
+			"focused": "",
+			"default": ""
+		},
+	},
 
-  "cpu": {
-    "interval": 1,
-    "format": "  {usage}%",
-	"min-length": 6,
-  },
+	"clock": {
+		"interval": 60,
+		"align": 0,
+		"rotate": 0,
+		"tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%d %b %Y [%H:%M]}",
+	},
+
+	"cpu": {
+		"interval": 1,
+		"format": "  {usage}%",
+		"min-length": 6,
+	},
            
-  "custom/power": {
-	"format" : "",
-    //"format": "󰐥",
-    "tooltip": false,
-    "on-click": "archlinux-logout",
-  },
+	"custom/power": {
+		"format" : "",
+		//"format": "󰐥",
+		"tooltip": false,
+		"on-click": "archlinux-logout",
+	},
 
-  "memory": {
-    "interval": 10,
-    "format": "  {percentage}% ({used}GB)",
-	"min-length" : 14,
-  },
+	"memory": {
+		"interval": 10,
+		"format": "  {percentage}% ({used}GB)",
+		"min-length" : 14,
+	},
 
-  "wireplumber": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "󰖁  Mute",
-    "format-icons": {
-      "default": ["󰖀", "󰕾", "󰕾"]
-    },
-    "scroll-step": 5.0,
-    "on-click": "pamixer -t",
-    "on-scroll-up": "~/.config/hypr/scripts/volume --inc",
-    "on-scroll-down": "~/.config/hypr/scripts/volume --dec",
-    "smooth-scrolling-threshold": 1,
-	"min-length" : 6,
-  },
+	"wireplumber": {
+		"format": "{icon}  {volume}%",
+		"format-muted": "󰖁  Mute",
+		"format-icons": {
+			"default": ["󰖀", "󰕾", "󰕾"]
+		},
+		"scroll-step": 5.0,
+		"on-click": "pamixer -t",
+		"on-scroll-up": "~/.config/hypr/scripts/volume --inc",
+		"on-scroll-down": "~/.config/hypr/scripts/volume --dec",
+		"smooth-scrolling-threshold": 1,
+		"min-length" : 6,
+	},
 
-  "tray": {
-    "icon-size": 18,
-    "spacing": 6
-  }
+	"tray": {
+		"icon-size": 18,
+		"spacing": 6
+	},
+	
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "ENG",
+		"format-ru": "RUS",
+		"format-lv": "LAT",
+		"format-de": "GER"
+	},
+	
+	"custom/spotify": {
+		"exec": "/usr/bin/python3 $HOME/.config/hypr/waybar/mediaplayer.py --player spotify",
+		"format": "{}  ",
+		"return-type": "json",
+		"on-click": "playerctl --player=spotify play-pause",
+		"on-scroll-down": "playerctl --player=spotify next",
+		"on-scroll-up": "playerctl --player=spotify previous"
+	},
+
+	"network": {
+		"format": "{ifname}",
+		"format-ethernet": "󰈀 ",
+		"format-wifi": " ",
+		//"format-disconnected": "", //An empty format will hide the module.
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		//"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50,
+		//"on-click": // TODO: execute network manager
+	},
+
+	"temperature": {
+		"thermal-zone": 2,
+		//"hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+		"critical-threshold": 80,
+		"format-critical": "{temperatureC}°C ",
+		"format": "{temperatureC}°C ",
+		"interval": 2
+	}
 }
