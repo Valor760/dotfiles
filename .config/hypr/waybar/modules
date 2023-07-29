@@ -58,7 +58,7 @@
 		"on-scroll-up": "~/.config/hypr/scripts/volume --inc",
 		"on-scroll-down": "~/.config/hypr/scripts/volume --dec",
 		"smooth-scrolling-threshold": 1,
-		"min-length" : 6,
+		"min-length" : 7,
 	},
 
 	"tray": {
@@ -98,7 +98,7 @@
 
 	"temperature": {
 		"thermal-zone": 2,
-		//"hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+		//"hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
 		"critical-threshold": 80,
 		"format-critical": "{temperatureC}°C ",
 		"format": "{temperatureC}°C ",

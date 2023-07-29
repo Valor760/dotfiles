@@ -29,4 +29,7 @@ ${SCRIPTSDIR}/xauthority &
 dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 discord &
+
+# Equalizer
+nohup easyeffects --gapplication-service &
 #nm-applet --indicator

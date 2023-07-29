@@ -12,5 +12,5 @@
 
 	"modules-left": ["wlr/workspaces", "cpu", "memory", "temperature", "custom/spotify"],
 	"modules-center": ["clock"],
-	"modules-right": ["wireplumber", "network", "hyprland/language", "tray", "custom/power"],
+	"modules-right": ["tray", "wireplumber", "hyprland/language", "network", "custom/power"],
 }
