@@ -2,12 +2,22 @@
 
 # Some constants
 CONFIG="$HOME/.config"
-HYPRLAND_CONF="$CONFIG/hypr"
 CURR_DIR=$(pwd)
 
+HYPRLAND_CONF="$CONFIG/hypr"
+KITTY_CONF="$CONFIG/kitty"
+
 # Hypland config
-if [ -d $HYPRLAND_CONF ]
+if [[ -d $HYPRLAND_CONF && ! -L $HYPRLAND_CONF ]]
 then
 	rm -rf $HYPRLAND_CONF
 fi
-sudo ln -s $CURR_DIR/.config/hypr $HYPRLAND_CONF
+ln -sf $CURR_DIR/.config/hypr $HYPRLAND_CONF
+
+# Kitty config
+if [[ -d $KITTY_CONF && ! -L $KITTY_CONF ]]
+then
+	rm -rf $KITTY_CONF
+fi
+ln -sf $CURR_DIR/.config/kitty $KITTY_CONF
+
