@@ -1,23 +1,20 @@
 #!/bin/sh
 
 # Some constants
-CONFIG="$HOME/.config"
+CONFIG_DIR=".config"
 CURR_DIR=$(pwd)
 
-HYPRLAND_CONF="$CONFIG/hypr"
-KITTY_CONF="$CONFIG/kitty"
+HYPRLAND_CONF="$CONFIG_DIR/hypr"
+KITTY_CONF="$CONFIG_DIR/kitty"
+EASYEFFECTS_CONF="$CONFIG_DIR/easyeffects"
 
-# Hypland config
-if [[ -d $HYPRLAND_CONF && ! -L $HYPRLAND_CONF ]]
-then
-	rm -rf $HYPRLAND_CONF
-fi
-ln -sf $CURR_DIR/.config/hypr $HYPRLAND_CONF
-
-# Kitty config
-if [[ -d $KITTY_CONF && ! -L $KITTY_CONF ]]
-then
-	rm -rf $KITTY_CONF
-fi
-ln -sf $CURR_DIR/.config/kitty $KITTY_CONF
+for cfg in $HYPRLAND_CONF $KITTY_CONF $EASYEFFECTS_CONF
+do
+	if [[ -d $HOME/$cfg && ! -L $HOME/$cfg ]]
+	then
+		echo "Applying config: $cfg"
+		rm -rf "$HOME/$cfg"
+	fi
+	ln -sf "$CURR_DIR/$cfg" "$HOME/$cfg"
+done
 

@@ -17,6 +17,9 @@ done
 # Apply themes
 ${SCRIPTSDIR}/gtkthemes &
 
+# Equalizer
+nohup easyeffects --gapplication-service &
+
 # Lauch notification daemon (mako)
 ${SCRIPTSDIR}/notifications &
 
@@ -30,6 +33,4 @@ dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 discord &
 
-# Equalizer
-nohup easyeffects --gapplication-service &
 #nm-applet --indicator
