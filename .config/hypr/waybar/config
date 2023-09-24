@@ -10,7 +10,7 @@
 	"margin-left": 0,
 	"margin-right": 0,
 
-	"modules-left": ["wlr/workspaces", "cpu", "memory", "temperature", "custom/spotify"],
+	"modules-left": ["hyprland/workspaces", "cpu", "memory", "temperature", "custom/spotify"],
 	"modules-center": ["clock"],
 	"modules-right": ["tray", "wireplumber", "hyprland/language", "network", "custom/power"],
 }
